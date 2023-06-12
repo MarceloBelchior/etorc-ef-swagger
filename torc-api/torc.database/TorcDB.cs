@@ -19,14 +19,15 @@ namespace torc.database
 
 
         //for migrations constructor 
-       public TorcDB(DbContextOptions<TorcDB> options) : base(options)
+        public TorcDB(DbContextOptions<TorcDB> options) : base(options)
         {
-       }
+        }
 
 
         // DbSet properties representing your entities
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
 
         // Override OnModelCreating method if you need to configure entity relationships or other model-specific configurations
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,23 +36,25 @@ namespace torc.database
             modelBuilder.Entity<Order>().Property(o => o.Cost).HasPrecision(18, 2); // Specify the desired precision and scale
             modelBuilder.Entity<Order>().Property(o => o.Id).HasColumnName("OrderId");
 
-            modelBuilder.Entity<Order>().HasOne(c => c.product);//
+            modelBuilder.Entity<Order>().HasOne(c => c.Products);//
 
 
             modelBuilder.Entity<Product>()
              .HasMany(p => p.Orders)
-             .WithOne(o => o.product)
-             .HasForeignKey(o => o.ProductId) ;
+             .WithOne(o => o.Products)
+             .HasForeignKey(o => o.ProductId);
 
 
             modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);
 
-          
+
         }
 
         //For Migration
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //  optionsBuilder.UseLazyLoadingProxies();
+
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Server=localhost;Database=Torc;User Id=sa;Password=YourPassword123;TrustServerCertificate=true;");

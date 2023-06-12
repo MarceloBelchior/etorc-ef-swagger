@@ -16,7 +16,7 @@ namespace torc.business
             {
                 var result = orderRepository.Insert(entity);
                 Expression<Func<Order, bool>> where = m => m.Id > entity.Id;
-                orderRepository.Select(where, include: new[] { "product" }).FirstOrDefault();
+                orderRepository.Select(where, include: new[] { "Products" }).FirstOrDefault();
                 return result;
             });
         }
