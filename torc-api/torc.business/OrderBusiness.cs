@@ -22,7 +22,7 @@ namespace torc.business
                 Expression<Func<Product, bool>> expression = m => m.Id == entity.ProductId;
                 var prod = productRepository.Select(expression).FirstOrDefault();
                 if (prod == null)
-                    throw new NotImplementedException("Product Not Found");
+                    return null;   // throw new NotImplementedException("Product Not Found");
                 entity.Product = prod;
                 var result = orderRepository.Insert(entity);
                 return result;

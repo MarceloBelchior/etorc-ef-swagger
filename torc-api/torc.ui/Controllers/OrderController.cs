@@ -34,9 +34,25 @@ namespace torc.ui.Properties
 
             var query = await orderBusiness.CreateOrder(entity);
             if (query == null)
+                return BadRequest("Error to create order - Check Product Id Exists");
+            return Ok(query);
+        }
+
+
+
+        [HttpGet]
+        [SwaggerResponse(200, "Return Order submiteed and Id of database", typeof(List<Order>))]
+
+        public async Task<IActionResult> GetOrder()
+        {
+          
+
+            var query = await orderBusiness.GetOrders();
+            if (query == null)
                 return BadRequest("Error to create order");
             return Ok(query);
         }
+
 
 
     }
