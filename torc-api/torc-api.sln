@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1705.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "torc-api", "torc-api\torc-api.csproj", "{EFFB1210-CC46-4ED3-8A41-6A4D6846CDC2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI Layer", "DI Layer", "{D1272A63-5331-40D7-BC70-4CFB85EC05EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "torc.business", "torc.business\torc.business.csproj", "{151E1A2B-E700-40BA-A106-7D3442180B7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "torc.database", "torc.database\torc.database.csproj", "{5842600F-C10D-4319-A1D5-FC2A444A0FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "torc.model", "tork.model\torc.model.csproj", "{00F71F7E-5951-44D6-8EBE-C3FF49E1B892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "torc.Iface", "torc.Iface\torc.Iface.csproj", "{08D69ABA-6F36-46CA-AE4D-C2597E2A7785}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "torc.ui", "torc.ui\torc.ui.csproj", "{7DC7DDFE-B7A1-4F8E-9B8E-F6FCE4380F2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "torc.Test", "torc.Test\torc.Test.csproj", "{864D9C22-1857-45B7-9582-DA1EE1608A4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +23,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EFFB1210-CC46-4ED3-8A41-6A4D6846CDC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFFB1210-CC46-4ED3-8A41-6A4D6846CDC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFFB1210-CC46-4ED3-8A41-6A4D6846CDC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFFB1210-CC46-4ED3-8A41-6A4D6846CDC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151E1A2B-E700-40BA-A106-7D3442180B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151E1A2B-E700-40BA-A106-7D3442180B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151E1A2B-E700-40BA-A106-7D3442180B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151E1A2B-E700-40BA-A106-7D3442180B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5842600F-C10D-4319-A1D5-FC2A444A0FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5842600F-C10D-4319-A1D5-FC2A444A0FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5842600F-C10D-4319-A1D5-FC2A444A0FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5842600F-C10D-4319-A1D5-FC2A444A0FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00F71F7E-5951-44D6-8EBE-C3FF49E1B892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F71F7E-5951-44D6-8EBE-C3FF49E1B892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F71F7E-5951-44D6-8EBE-C3FF49E1B892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F71F7E-5951-44D6-8EBE-C3FF49E1B892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D69ABA-6F36-46CA-AE4D-C2597E2A7785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D69ABA-6F36-46CA-AE4D-C2597E2A7785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D69ABA-6F36-46CA-AE4D-C2597E2A7785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D69ABA-6F36-46CA-AE4D-C2597E2A7785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DC7DDFE-B7A1-4F8E-9B8E-F6FCE4380F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC7DDFE-B7A1-4F8E-9B8E-F6FCE4380F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC7DDFE-B7A1-4F8E-9B8E-F6FCE4380F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC7DDFE-B7A1-4F8E-9B8E-F6FCE4380F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{864D9C22-1857-45B7-9582-DA1EE1608A4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{864D9C22-1857-45B7-9582-DA1EE1608A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{864D9C22-1857-45B7-9582-DA1EE1608A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{864D9C22-1857-45B7-9582-DA1EE1608A4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
