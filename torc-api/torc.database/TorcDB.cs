@@ -36,12 +36,13 @@ namespace torc.database
             modelBuilder.Entity<Order>().Property(o => o.Cost).HasPrecision(18, 2); // Specify the desired precision and scale
             modelBuilder.Entity<Order>().Property(o => o.Id).HasColumnName("OrderId");
 
-    
+            modelBuilder.Entity<Order>()
+               .HasOne(o => o.Product);
 
-            modelBuilder.Entity<Product>()
-             .HasMany(p => p.Orders)
-             .WithOne(o => o.Products)
-             .HasForeignKey(o => o.ProductId);
+       //     modelBuilder.Entity<Product>()
+        //     .HasMany(p => p.Orders)
+       //      .WithOne(o => o.Products)
+       //      .HasForeignKey(o => o.ProductId);
 
 
             modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);

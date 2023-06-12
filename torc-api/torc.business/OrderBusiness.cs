@@ -8,15 +8,23 @@ namespace torc.business
     public class OrderBusiness : IOrderBusiness
     {
         private readonly IOrderRepository orderRepository;
-        public OrderBusiness(IOrderRepository _orderRepository) => orderRepository = _orderRepository;
+        private readonly IProductRepository productRepository;
+        public OrderBusiness(IOrderRepository _orderRepository, IProductRepository _productRepository)
+        {
+            productRepository = _productRepository;
+            orderRepository = _orderRepository;
+        }
 
         public Task<Order> CreateOrder(Order entity)
         {
             return Task.Run(() =>
             {
+                Expression<Func<Product, bool>> expression = m => m.Id == entity.ProductId;
+                var prod = productRepository.Select(expression).FirstOrDefault();
+                if (prod == null)
+                    throw new NotImplementedException("Product Not Found");
+                entity.Product = prod;
                 var result = orderRepository.Insert(entity);
-                Expression<Func<Order, bool>> where = m => m.Id > entity.Id;
-                orderRepository.Select(where, include: new[] { "Products" }).FirstOrDefault();
                 return result;
             });
         }

@@ -5,7 +5,7 @@ public class Order
 
     //Navegation Property
     
-    public Product? Products { get; set; }
+    public Product? Product { get; set; }
 
     //FK
     public int ProductId { get; set; }
