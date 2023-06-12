@@ -1,16 +1,19 @@
-To Run this Project.
+To run this project, follow these steps:
 
-Step 1 use Docker-compose up command.
+Step 1: Use the `docker-compose up` command to start the project.
 
-After that    
+Once the project is up and running, you can proceed with the following steps:
 
-Connect to DataBase using 
-      Server: localhost
-      User: sa
-      Password: YourPassword123
-      Execute locatation: ./torc.Database/Migrations/MyMigrationScript.sql
-      
- The Solution is ready! 
+Step 2: Connect to the database using the following credentials:
+   - Server: `localhost`
+   - User: `sa`
+   - Password: `YourPassword123`
+
+Step 3: Execute the migration script located at `./torc.Database/Migrations/MyMigrationScript.sql`. This script will set up the necessary database schema for the project.
+
+**Note:** Make sure to replace `YourPassword123` with the actual password for the `sa` user.
+
+That's it! The solution is now ready to be used. You can start interacting with the application.
  
  Swagger
  
